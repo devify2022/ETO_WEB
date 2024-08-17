@@ -1,0 +1,19 @@
+.swiper-button-next,
+.swiper-button-prev {
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  
+
+}
+
+.swiper-pagination-bullet {
+    background-color: black;
+    border: 2px solid red
+    /* Adjust as per your preference */
+}
