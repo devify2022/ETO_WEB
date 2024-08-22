@@ -1,5 +1,4 @@
-
-// Import Swiper React components
+import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import ellipse from"../assets/Ellipse.png"
 import star from"../assets/Star.png"
@@ -66,36 +65,57 @@ const reviews = [
 ];
 
 const ClientSays = () => {
+
+  function truncateText(text, maxLength) {
+    if (text.length > maxLength) {
+      return (
+        <>
+          {text.slice(0, maxLength)}
+          <span style={{ color: 'blue' }}> ...more</span>
+        </>
+      );
+    }
+    return text;
+  }
+
   return (
-    <div className="w-full h-screen flex flex-col justify-center items-center bg-[#F5F5F5]">
-      <div className="w-full h-[10%] flex justify-center">
-        <p className="2xl:text-[4rem] xl:text-[4rem] lg:text-[3rem] md:text-[2rem] font-bold">
+    <div className="w-full lg:h-screen md:h-[55vh] h-[60vh] flex flex-col justify-center items-center bg-[#F5F5F5] md:py-4 lg:py-0 relative">
+      <div className="w-full h-[10%] flex justify-center ">
+        <p className="2xl:text-[4rem] xl:text-[4rem] lg:text-[3rem] md:text-[3rem] text-[2rem] font-bold">
           WHAT CLIENT SAYS?
         </p>
       </div>
 
-      <div className="w-[90%] h-[70%]">
+      <div className="md:w-[90%] lg:h-[70%] md:h-[90%] h-[70%] w-full">
         <Swiper
-          slidesPerView={2}
-          spaceBetween={-50}
+          slidesPerView={1}
+          spaceBetween={10}
           slidesPerGroupSkip={1}
           keyboard={{ enabled: true }}
           breakpoints={{
-            769: {
+            768: {
+              slidesPerView: 1,
+              slidesPerGroup: 1,
+            },
+            1024: {
               slidesPerView: 2,
+              spaceBetween: -50,
               slidesPerGroup: 1,
             },
           }}
-          navigation={true}
+          navigation={{
+            nextEl: '.swiper-button-next-custom',
+            prevEl: '.swiper-button-prev-custom',
+          }}
           pagination={{ clickable: true }}
           modules={[Keyboard, Navigation]} // Removed Scrollbar if not used
-          className="mySwiper w-[100%] h-full"
+          className="mySwiper w-[90%] h-full"
         >
           {reviews.map((item, index) => (
-            <SwiperSlide key={index} className="flex justify-center items-center h-[80%] self-center">
-              <div className="border-2 w-[75%] h-[72%] flex flex-col items-center gap-6 justify-center p-[5%] border-[#D7D7D7] shadow-md rounded-md">
+            <SwiperSlide key={index} className="flex justify-center items-center w-[80%]! h-[80%] self-center">
+              <div className="border-2 md:w-[75%] w-[70%] md:h-[72%] h-[80%] flex flex-col items-center gap-6 justify-center p-[5%] border-[#D7D7D7] shadow-md rounded-md">
                 <div className="flex items-center w-full h-[25%] gap-2">
-                  <div className="w-[13%] h-[100%]">
+                  <div className="md:w-[12%] w-[18%] h-[100%]">
                     <img
                       src={item.image}
                       alt={item.name}
@@ -103,7 +123,7 @@ const ClientSays = () => {
                     />
                   </div>
                   <div>
-                    <p className="text-[#444444] 2xl:text-[1.5rem] xl:text-[1.25rem] lg:text-[1.1rem] md:text-[0.7rem] font-semibold uppercase">
+                    <p className="text-[#444444] 2xl:text-[1.5rem] xl:text-[1.25rem] lg:text-[1.1rem] md:text-[1.25rem] text-[1rem] font-semibold uppercase">
                       {item.name}
                     </p>
                     <div className="flex gap-1 w-[20%] h-[8%]">
@@ -113,12 +133,19 @@ const ClientSays = () => {
                     </div>
                   </div>
                 </div>
-                <div className="px-2">
-                  <p className="2xl:text-[1.1rem] xl:text-[1rem] lg:text-[0.9rem] md:text-[0.7rem]">{item.review}</p>
+                <div className="md:px-2 px-1">
+                  <p className="2xl:text-[1.1rem] xl:text-[1rem] lg:text-[0.9rem] md:text-[1rem] text-[.75rem] hidden md:block">{item.review}</p>
+                  <p className="2xl:text-[1.1rem] xl:text-[1rem] lg:text-[0.9rem] md:text-[1rem] text-[.75rem] block md:hidden">{truncateText(item.review, 200)}</p>
                 </div>
               </div>
             </SwiperSlide>
           ))}
+        <div className="swiper-button-next-custom absolute lg:right-0 md:right-0 right-0  top-1/2 transform -translate-y-1/2">
+            <AiOutlineArrowRight size={30} />
+          </div>
+          <div className="swiper-button-prev-custom absolute lg:left-0 top-1/2 transform -translate-y-1/2">
+            <AiOutlineArrowLeft size={30} />
+          </div>
         </Swiper>
       </div>
     </div>

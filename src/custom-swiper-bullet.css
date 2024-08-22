@@ -1,4 +1,4 @@
-.swiper-button-next,
+/* .swiper-button-next,
 .swiper-button-prev {
     background-color: black;
     color: white;
@@ -7,9 +7,39 @@
     height: 60px;
     display: flex;
     justify-content: center;
-    align-items: center; 
-  
+    align-items: center;
+}
 
+
+@media (max-width: 640px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        background-color: transparent;
+        color: black;
+    }
+} */
+
+.swiper-button-next-custom,
+.swiper-button-prev-custom {
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10; /* Ensure buttons are on top of slides */
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 640px) {
+    .swiper-button-next-custom,
+    .swiper-button-prev-custom {
+        background-color: transparent;
+        color: black;
+    }
 }
 
 .swiper-pagination-bullet {

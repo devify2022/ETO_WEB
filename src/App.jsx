@@ -12,14 +12,22 @@ function App() {
  
   return (
     <div className="w-full h-fit">
-      <Navbar/>
-      <Home/>
-      <Offer/>
-      <Choose/>
-      <Drivers/>
-      <AppWorks/>
-      <ClientSays/>
-      <Footer/>
+      <Navbar />
+      <section id="home">
+        <Home />
+      </section>
+      <Offer />
+      <section id="why-us">
+      <Choose />
+      </section>
+        <Drivers />
+      <section id="download">
+        <AppWorks />
+      </section>
+      <section id="reviews">
+      <ClientSays />
+      </section>
+      <Footer />
     </div>
   )
 }
