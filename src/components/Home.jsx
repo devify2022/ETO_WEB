@@ -16,7 +16,7 @@ const Home = () => {
   
 </div>
 
-    <div className="Map md:w-[60%] w-full lg:h-screen md:h-full h-[40%] flex  justify-end z-10 absolute md:right-0 top-0">
+    <div className="Map md:w-[60%] w-full lg:h-screen md:h-full h-[40%] flex  justify-end z-10 absolute md:right-0 top-0 ">
       <div className="Iphone15 w-[85%] lg:h-[80vh] md:h-[70vh] h-[30vh] flex self-end">
       </div>
     </div>

@@ -113,7 +113,7 @@ const ClientSays = () => {
         >
           {reviews.map((item, index) => (
             <SwiperSlide key={index} className="flex justify-center items-center w-[80%]! h-[80%] self-center">
-              <div className="border-2 md:w-[75%] w-[70%] md:h-[72%] h-[80%] flex flex-col items-center gap-6 justify-center p-[5%] border-[#D7D7D7] shadow-md rounded-md">
+              <div className="border-2 md:w-[75%] w-[90%] md:h-[72%] h-[80%] flex flex-col items-center gap-6 justify-center p-[5%] border-[#D7D7D7] shadow-md rounded-md">
                 <div className="flex items-center w-full h-[25%] gap-2">
                   <div className="md:w-[12%] w-[18%] h-[100%]">
                     <img
@@ -140,10 +140,10 @@ const ClientSays = () => {
               </div>
             </SwiperSlide>
           ))}
-        <div className="swiper-button-next-custom absolute lg:right-0 md:right-0 right-0  top-1/2 transform -translate-y-1/2">
+        <div className="swiper-button-next-custom absolute lg:right-0 md:right-0 right-0 top-[95%] md:top-1/2 transform -translate-y-1/2">
             <AiOutlineArrowRight size={30} />
           </div>
-          <div className="swiper-button-prev-custom absolute lg:left-0 top-1/2 transform -translate-y-1/2">
+          <div className="swiper-button-prev-custom absolute lg:left-0 top-[95%] md:top-1/2 transform -translate-y-1/2">
             <AiOutlineArrowLeft size={30} />
           </div>
         </Swiper>
