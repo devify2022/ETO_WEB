@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-scroll";
-import EtoLogo from "../assets/Eto_Logo2.png"
+import EtoLogo from "../assets/ETO_Logo3.png"
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
