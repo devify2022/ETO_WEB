@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-scroll";
-import EtoLogo from "../assets/ETO_Logo.png"
+import EtoLogo from "../assets/Eto_Logo2.png"
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
@@ -44,7 +44,7 @@ const Navbar = () => {
   return (
     <div className="flex justify-center w-full h-fit relative">
       <div className="z-20 absolute w-full h-fit flex flex-row items-center justify-between py-2 lg:px-20 px-2 gap-2">
-        <div className="w-20 h-20">
+        <div className="w-32 h-28">
           <img src={EtoLogo} alt="logo" className="w-full h-full" />
         </div>
         <div className="block md:hidden absolute right-2">
